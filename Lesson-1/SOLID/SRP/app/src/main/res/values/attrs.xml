@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="Circle">
+    <declare-styleable name="CircleView">
         <attr name="color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="RingView">
+        <attr name="proTextSize" format="dimension" /><!--font size-->
+        <attr name="paddingSize" format="dimension" /><!--Maximum circle and view inner margin-->
+        <attr name="brokenMargin" format="dimension" /> <!--Maximum circle distance-->
+        <attr name="whitePointRadius" format="dimension" /><!--White dot radius-->
+    </declare-styleable>
+
 </resources>

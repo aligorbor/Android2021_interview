@@ -2,7 +2,7 @@ package ru.geekbrains.srp
 
 import kotlin.math.PI
 
-class Circle(private val radius: Double) {
+class Circle(private val radius: Int) {
     val area: Double
         get() {
             return PI * radius * radius

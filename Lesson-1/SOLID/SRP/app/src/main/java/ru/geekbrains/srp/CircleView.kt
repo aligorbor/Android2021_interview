@@ -47,8 +47,8 @@ class CircleView : View {
         context: Context,
         attrs: AttributeSet
     ) {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.Circle, 0, 0)
-        circleColor = typedArray.getColor(R.styleable.Circle_color, Color.GREEN)
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView, 0, 0)
+        circleColor = typedArray.getColor(R.styleable.CircleView_color, Color.GREEN)
         typedArray.recycle()
     }
 
@@ -66,5 +66,10 @@ class CircleView : View {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.drawCircle(centerX.toFloat(), centerY.toFloat(), radius.toFloat(), circlePaint)
+    }
+
+    fun getRad():Int {
+        invalidate()
+        return  radius
     }
 }

@@ -11,12 +11,30 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       // setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_ring)
     }
 
     override fun onResume() {
         super.onResume()
-        val circleCalc = Circle(275.0)
-        textArea.text = DecimalFormat(formatString).format(circleCalc.area);
+
+    //    val r =findViewById<CircleView>(R.id.circle).getRad()
+   //     val circleCalc = Circle(r)
+    //    textArea.text = DecimalFormat(formatString).format(circleCalc.area);
+
+// add color
+        val colorList: MutableList<Int> = ArrayList()
+        colorList.add(R.color.main_color)
+        colorList.add(R.color.main_accent)
+        colorList.add(R.color.main_red)
+
+        // added percentage
+        val rateList: MutableList<Float> = ArrayList()
+        rateList.add(33.3f)
+        rateList.add(33.3f)
+        rateList.add(33.3f)
+        val r =findViewById<RingView>(R.id.ringView)
+        r.setShow(colorList, rateList, true, true)
+
     }
 }
