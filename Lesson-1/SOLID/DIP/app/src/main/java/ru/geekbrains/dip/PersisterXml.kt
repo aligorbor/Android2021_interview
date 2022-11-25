@@ -5,7 +5,7 @@ import org.simpleframework.xml.core.Persister
 import java.io.StringWriter
 import java.io.Writer
 
-class PersisterXml : ru.geekbrains.dip.Persister {
+class PersisterXml : PersisterUserable {
     override fun convert(user: Userable): String{
         val serializer: Serializer = Persister()
         val writer: Writer = StringWriter()

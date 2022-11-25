@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.core.widget.addTextChangedListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,18 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textInput.addTextChangedListener(object: TextWatcher{
-            override fun afterTextChanged(s: Editable?) {
-                // Анонимный класс зависит от метода, который не использует
-            }
+//        textInput.addTextChangedListener(object: TextWatcher{
+//            override fun afterTextChanged(s: Editable?) {
+//                // Анонимный класс зависит от метода, который не использует
+//            }
+//
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//                // Анонимный класс зависит от метода, который не использует
+//            }
+//
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//                textEcho.text = s
+//            }
+//        })
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Анонимный класс зависит от метода, который не использует
-            }
+        textInput.addTextChangedListener( { charSequence: CharSequence?, _: Int, _: Int, _: Int ->  textEcho.text = charSequence},
+            { _: CharSequence?, _: Int, _: Int, _: Int -> },{})
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                textEcho.text = s
-            }
-        })
     }
 }

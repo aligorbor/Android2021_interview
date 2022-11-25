@@ -1,5 +1,5 @@
 package ru.geekbrains.dip
 
-interface Persister {
+interface PersisterUserable {
     fun convert(user: Userable): String
 }
